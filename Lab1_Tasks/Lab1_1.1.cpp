@@ -15,6 +15,7 @@ int main()
 	char UserName;
 	unsigned int numOfPremChannels;
 	float amountDue;
+	unsigned int numOfBasicServConn;
 
 	cout<<"Enter your Username: \n";
 	cin>>UserName;
@@ -34,8 +35,13 @@ int main()
 		cin>>numOfPremChannels;
         //cout<<"UserName: "<<UserName<<endl<<"Password: "<<Password<<endl<<"numOfPremChannels: "<<numOfPremChannels<<endl;
 		amountDue = RES_BILL_PROC_FEES + RES_BASIC_SERV_COST + numOfPremChannels * RES_COST_PREM_CHANNEL;
-		cout<<"The amount due is: "<<amountDue<<"\n";	
+		cout<<"The amount due is: "<<amountDue<<"\n";
+
+		return 0;	
 	}
+
+	cout<<"Enter the number of basic service connections: \n";
+	cin>>numOfBasicServConn;
 
 	if (numOfBasicServConn <= 10)
 		amountDue = BUS_BILL_PROC_FEES + BUS_BASIC_SERV_COST+ numOfPremChannels * BUS_COST_PREM_CHANNEL;
