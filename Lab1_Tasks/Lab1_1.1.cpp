@@ -14,22 +14,35 @@ int main()
 	unsigned int Password;
 	char UserName;
 	unsigned int numOfPremChannels;
+	float amountDue;
+
 	cout<<"Enter your Username: \n";
 	cin>>UserName;
+
 	if(UserName != 'R' && UserName != 'r' && UserName != 'B' && UserName != 'b')
 	{
 		cout<<"Wrong input! Try again!\n";
 		return 0;
 	}
+
 	cout<<"Enter your Password: \n";
 	cin>>Password;
+
 	if(UserName == 'R' || UserName == 'r')
 	{
 		cout<<"Enter the amount of premium channels: \n";
 		cin>>numOfPremChannels;
-        cout<<"UserName: "<<UserName<<endl<<"Password: "<<Password<<endl<<"numOfPremChannels: "<<numOfPremChannels<<endl;
+        //cout<<"UserName: "<<UserName<<endl<<"Password: "<<Password<<endl<<"numOfPremChannels: "<<numOfPremChannels<<endl;
+		amountDue = RES_BILL_PROC_FEES + RES_BASIC_SERV_COST + numOfPremChannels * RES_COST_PREM_CHANNEL;
+		cout<<"The amount due is: "<<amountDue<<"\n";	
 	}
-	
-	
+
+	if (numOfBasicServConn <= 10)
+		amountDue = BUS_BILL_PROC_FEES + BUS_BASIC_SERV_COST+ numOfPremChannels * BUS_COST_PREM_CHANNEL;
+	else
+		amountDue = BUS_BILL_PROC_FEES + BUS_BASIC_SERV_COST + (numOfBasicServConn - 10) * BUS_BASIC_CONN_COST + numOfPremChannels * BUS_COST_PREM_CHANNEL;
+
+	cout<<"The amount due is: "<<amountDue<<"\n";
+
 	return 0;
 }
