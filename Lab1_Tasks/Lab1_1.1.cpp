@@ -16,13 +16,13 @@ int main()
 	unsigned int numOfPremChannels;
 	cout<<"Enter your Username: \n";
 	cin>>UserName;
-	cout<<"Enter your Password: \n";
-	cin<<Password;
 	if(UserName != 'R' && UserName != 'r' && UserName != 'B' && UserName != 'b')
 	{
-		cout<<"Wrong input! Try again!"
+		cout<<"Wrong input! Try again!";
 		return 0;
 	}
+	cout<<"Enter your Password: \n";
+	cin>>Password;
 	if(UserName == 'R' || UserName == 'r')
 	{
 		cout<<"Enter the amount of premium channels: \n";
