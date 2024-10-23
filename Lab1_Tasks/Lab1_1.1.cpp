@@ -18,7 +18,7 @@ int main()
 	cin>>UserName;
 	if(UserName != 'R' && UserName != 'r' && UserName != 'B' && UserName != 'b')
 	{
-		cout<<"Wrong input! Try again!";
+		cout<<"Wrong input! Try again!\n";
 		return 0;
 	}
 	cout<<"Enter your Password: \n";
