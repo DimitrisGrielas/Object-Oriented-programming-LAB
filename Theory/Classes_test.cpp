@@ -8,17 +8,13 @@ class Rectangle
         int width;
         int height;
     public:
-        Rectangle()
+        Rectangle(): width(0), height(0)
         {
-            setWidth(0);
-            setHeight(0);
             cout << "Constructed (case 1)\n";
         }
 
-        Rectangle(int w, int h)
+        Rectangle(int w, int h): width(w), height(h) 
         {
-            setWidth(w);
-            setHeight(h);
             cout << "Constructed (case 2)\n";
         }
 
@@ -84,7 +80,7 @@ inline void inc_rect(Rectangle &r)
     r.setHeight(r.getHeight() + 1);
 }
 
-inline Rectangle add_rect(Rectangle &r1, Rectangle &r2)
+inline Rectangle add_rect(const Rectangle &r1, const Rectangle &r2)
 {
     Rectangle r (r1.getWidth()+r2.getWidth(), r1.getHeight()+r2.getHeight());
     return r;
