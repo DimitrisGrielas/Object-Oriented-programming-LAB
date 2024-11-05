@@ -2,6 +2,19 @@
 
 using namespace std;
 
+char ** make_array(int length)
+{
+    int i;
+    char** stud_names = new char*[length];
+
+    for(i=0; i <= length-1; i++)
+    {
+        stud_names[i] = new char[50];
+    }
+
+    return stud_names;
+}
+
 int main()
 {
     int stud_part_count;
@@ -10,6 +23,6 @@ int main()
     cin >> stud_part_count;
     cout << "\n";
 
-    char *stud_names = new char[stud_part_count][stud_part_count];
+    
 
 }
